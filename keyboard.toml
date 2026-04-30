@@ -1,35 +1,66 @@
-# Documentation: https://rmk.rs/docs/configuration.html
 [keyboard]
-name = "RMK Keyboard"
-product_name = "RMK Keyboard"
+name = "rmk-ak34"
+product_name = "rmk-ak34"
 vendor_id = 0x4c4b
 product_id = 0x4643
-manufacturer = "RMK"
-chip = "rp2040"
+manufacturer = "Custom"
+chip = "nrf52840"
+usb_enable = true
+
+[ble]
+enabled = true
+
+[storage]
+enabled = true
+start_addr = 0x000F8000
+num_sectors = 2
+
+[chip.nrf52840]
+dcdc_reg0 = true
+dcdc_reg1 = true
 
 [matrix]
-# Row and col pins are mandatory
-row_pins = ["PIN_6", "PIN_7", "PIN_8", "PIN_9"]
-col_pins = ["PIN_19", "PIN_20", "PIN_21"]
+row_pins = ["P1_11", "P0_05", "P0_04"] # D6, D5, D4
+col_pins = ["P0_31", "P0_20", "P0_09", "P0_10"] # D7, D8, D9, D10
+row2col = true 
 
-# RMK uses col2row as the default matrix diode direction, if you want to use a row2col matrix, add `row2col = true`
-# row2col = true
+[[encoder]]
+a = "P0_29" # D3
+b = "P0_28" # D2
+layout = [
+    ["LBracket", "RBracket"], # Layer 0: [ and ]
+    ["VlU", "VlD"],           # Layer 1: Volume Up/Down
+    ["MwU", "MwD"],           # Layer 2: Mouse Scroll Up/Down
+    ["PgUp", "PgDn"]          # Layer 3: Page Up/Down
+]
 
 [layout]
-rows = 4
-cols = 3
-layers = 2
+rows = 3
+cols = 4
+layers = 4
 keymap = [
+    # LAYER 0: Default
     [
-        ["A", "B", "C"],
-        ["Kc1", "Kc2", "Kc3"],
-        ["LCtrl", "MO(1)", "LShift"],
-        ["OSL(1)", "LT(2, Kc9)", "LM(1, LShift | LGui)"]
+        ["A", "B", "C", "D"],
+        ["Kc1", "Kc2", "Kc3", "Kc4"],
+        ["LCtrl", "MO(1)", "MO(2)", "Enter"]
     ],
+    # LAYER 1: Hold MO(1)
     [
-        ["_", "TT(1)", "TG(2)"],
-        ["_", "_", "_"],
-        ["_", "_", "_"],
-        ["_", "_", "_"]
+        ["F1", "F2", "F3", "F4"],
+        ["_", "_", "_", "MO(3)"],
+        ["_", "_", "_", "_"]
     ],
+    # LAYER 2: Hold MO(2)
+    [
+        ["MediaPlay", "MediaNext", "MediaPrev", "Mute"],
+        ["_", "_", "_", "_"],
+        ["_", "_", "_", "_"]
+    ],
+    # LAYER 3: Hold MO(1) + MO(3)
+    [
+        ["_", "_", "_", "_"],
+        ["_", "_", "_", "_"],
+        ["_", "Bootloader", "Reset", "_"]
+    ]
 ]
