@@ -29,9 +29,9 @@ a = "P0_29" # D3
 b = "P0_28" # D2
 layout = [
     ["LBracket", "RBracket"], # Layer 0: [ and ]
-    ["VlU", "VlD"],           # Layer 1: Volume Up/Down
-    ["MwU", "MwD"],           # Layer 2: Mouse Scroll Up/Down
-    ["PgUp", "PgDn"]          # Layer 3: Page Up/Down
+    ["LBracket", "RBracket"],           # Layer 1: Volume Up/Down
+    ["LBracket", "RBracket"],           # Layer 2: Mouse Scroll Up/Down
+    ["LBracket", "RBracket"]          # Layer 3: Page Up/Down
 ]
 
 [layout]
@@ -53,7 +53,7 @@ keymap = [
     ],
     # LAYER 2: Hold MO(2)
     [
-        ["MediaPlay", "MediaNext", "MediaPrev", "Mute"],
+        ["_", "_", "_", "-"],
         ["_", "_", "_", "_"],
         ["_", "_", "_", "_"]
     ],
