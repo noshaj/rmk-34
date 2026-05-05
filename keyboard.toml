@@ -1,9 +1,9 @@
 [keyboard]
 name = "rmk-ak34-safe"
-board = "XIAO BLE" 
 vendor_id = 0x2886
 product_id = 0x8045
 manufacturer = "Custom"
+chip = "nrf52840"
 usb_enable = true
 
 [ble]
