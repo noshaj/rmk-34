@@ -1,26 +1,18 @@
 [keyboard]
 name = "rmk-ak34-safe"
+# Using nice!nano profile often bypasses the XIAO-specific CDC driver bug
+board = "nice!nano" 
 vendor_id = 0x2886
 product_id = 0x8045
-manufacturer = "Custom"
-chip = "nrf52840"
 usb_enable = false
 
 [ble]
 enabled = true
 
-[vial]
-# This removes the need to "unlock" the board in the Vial app
-vial_unlocked = true
-# Use these if you want specific IDs, otherwise RMK generates them
-# vial_id = [0xFB, 0x12, 0x5C, 0x05, 0x4D, 0x52, 0x05, 0x51]
-
 [storage]
-# Keep disabled for the first run to prevent flash memory conflicts
 enabled = false 
 
 [matrix]
-# Rows: D4, D5, D6 | Cols: D10, D9, D8, D7
 row_pins = ["P0_04", "P0_05", "P1_11"]
 col_pins = ["P1_15", "P1_14", "P1_13", "P1_12"]
 row2col = true
