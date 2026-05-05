@@ -6,9 +6,9 @@ on:
       - "**"
 jobs:
   build:
-    # Changed @main to @v0.7.0 to fix the trait bound error
-    uses: haobogu/rmk/.github/workflows/user_build.yml@9513364f706d9124be3f7f8976f634567406c64b
-
+    # Use 'main' but we will rely on your Cargo.toml to fix the error
+    uses: HaoboGu/rmk/.github/workflows/user_build.yml@main
     with:
       keyboard_toml_path: "keyboard.toml"
-      vial_json_path: "vial.json"
+      # If you deleted vial.json, remove the line below
+      vial_json_path: "vial.json" 
