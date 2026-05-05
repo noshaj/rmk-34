@@ -1,0 +1,12 @@
+[package]
+name = "rmk-ak34"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# This forces the builder to use the stable 0.7.0 release
+rmk = { version = "0.7.0", features = ["nrf52840_ble"] }
+
+[patch.crates-io]
+embedded-io = { github = "embedded-trainings/embedded-io", rev = "18797f7" }
+embedded-io-async = { github = "embedded-trainings/embedded-io", rev = "18797f7" }
