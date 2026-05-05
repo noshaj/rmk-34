@@ -1,7 +1,7 @@
 [keyboard]
 name = "rmk-ak34-safe"
-# Using nice!nano profile often bypasses the XIAO-specific CDC driver bug
-board = "nice!nano" 
+# Use the direct chip name to avoid the template board error
+chip = "nrf52840" 
 vendor_id = 0x2886
 product_id = 0x8045
 usb_enable = false
@@ -10,7 +10,7 @@ usb_enable = false
 enabled = true
 
 [storage]
-enabled = false 
+enabled = false
 
 [matrix]
 row_pins = ["P0_04", "P0_05", "P1_11"]
