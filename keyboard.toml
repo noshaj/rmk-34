@@ -9,6 +9,12 @@ usb_enable = true
 [ble]
 enabled = true
 
+[vial]
+# This removes the need to "unlock" the board in the Vial app
+vial_unlocked = true
+# Use these if you want specific IDs, otherwise RMK generates them
+# vial_id = [0xFB, 0x12, 0x5C, 0x05, 0x4D, 0x52, 0x05, 0x51]
+
 [storage]
 # Keep disabled for the first run to prevent flash memory conflicts
 enabled = false 
