@@ -6,10 +6,8 @@ on:
       - "**"
 jobs:
   build:
-    # Use 'main' but we will rely on your Cargo.toml to fix the error
-          uses: HaoboGu/rmk/.github/workflows/user_build.yml@v0.8
-
+    uses: HaoboGu/rmk/.github/workflows/user_build.yml@main
     with:
       keyboard_toml_path: "keyboard.toml"
-      # If you deleted vial.json, remove the line below
-      vial_json_path: "vial.json" 
+      # If you deleted vial.json, you MUST remove the line below
+      vial_json_path: "vial.json"
