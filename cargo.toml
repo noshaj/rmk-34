@@ -1,12 +1,13 @@
 [package]
-name = "rmk-ak34"
+name = "rmk-ak34-safe"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-# This forces the builder to use the stable 0.7.0 release
-rmk = { version = "0.7.0", features = ["nrf52840_ble"] }
+# We use the specific git revision of RMK from 2 weeks ago before this bug was introduced
+rmk = { git = "https://github.com", rev = "9513364f706d9124be3f7f8976f634567406c64b", features = ["nrf52840_ble"] }
 
 [patch.crates-io]
+# These force the "Error" traits to match, fixing the EndpointError
 embedded-io = { github = "embedded-trainings/embedded-io", rev = "18797f7" }
 embedded-io-async = { github = "embedded-trainings/embedded-io", rev = "18797f7" }
